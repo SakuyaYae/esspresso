@@ -27,7 +27,10 @@ When('i click on go west', async function () {
   const westBtn = await this.driver.findElements(By.xpath("//*[contains(text(),'Go west')]"));
   await westBtn[0].click();
 });
-
+When('i click on go east', async function () {
+  const eastBtn = await this.driver.findElements(By.xpath("//*[contains(text(),'Go east')]"));
+  await eastBtn[0].click();
+});
 When('i click on go north', async function () {
   const northBtn = await this.driver.findElements(By.xpath("//*[contains(text(),'Go north')]"));
   await northBtn[0].click();
