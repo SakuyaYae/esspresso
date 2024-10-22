@@ -76,6 +76,7 @@ Then('I should get a description of the game', async function () {
   expect(description).to.exist;
 });*/
 
+
 /*Given('I am in front of the cafe', async function () {
   By.xpath("//li[contains(text(),'Enter the cafe')]")
 });*/

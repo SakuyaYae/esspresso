@@ -1,7 +1,7 @@
 Feature: Help button
   As a user I want to be able to click the Help button from different pages
 
-  Scenario: Press the help button on startpage
+  Scenario: Press the help button on startpage and leave the help description
     Given I visit the homepage "http://localhost:3000"
     And I am in front of the cafe
     When I press the "Help" button
