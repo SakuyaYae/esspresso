@@ -4,8 +4,8 @@ import { By, until, Key } from 'selenium-webdriver';
 import { expect } from 'chai';
 
 When('I am in the cafe', async function(){
-  const enter = await this.driver.findElements(By.xpath("//li[contains(text(),'Enter the cafe')]"))
-  await enter[0].click();
+  const description = await this.driver.findElements(By.xpath("//*[contains(text(),'description')]"))
+  expect(description).to.exist;
 });
 
 Then('I click the {string} button to leave the cafe', async function(a){
@@ -26,4 +26,9 @@ Then('I click the {string} button to leave the bar', async function(a){
 When('I am at the Music scene', async function(){
   const description = await this.driver.findElements(By.xpath("//*[contains(text(),'description')]"))
   expect(description).to.exist;
+});
+
+Then('I click the {string} button to leave the Music scene', async function (a) {
+  const leaveMusicScene = await this.driver.findElements(By.xpath("//li[contains(text(),'Go east')]"))
+  await leaveMusicScene[0].click();
 });

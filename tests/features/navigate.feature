@@ -24,4 +24,4 @@ As a user I want to be able to navigate and visit the different places in this g
     And end up on the country side
     And then press "Go west" button to go west
     And I am at the Music scene
-    Then I click the "Go east" button to leave the bar
+    Then I click the "Go east" button to leave the Music scene
