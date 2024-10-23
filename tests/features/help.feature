@@ -1,5 +1,5 @@
 Feature: Help button
-  As a user I want to be able to click the Help button from different pages
+  As a user I want to be able to click the Help button from different views
 
   Scenario: Press the help button on startpage and leave the help description
     Given I visit the homepage "http://localhost:3000"
