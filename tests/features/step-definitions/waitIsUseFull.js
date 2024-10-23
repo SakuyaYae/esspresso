@@ -60,8 +60,11 @@ When('I press Jam whit the band', async function () {
   await jamBtn[0].click();
 });
 
-Then('I shoud have gotten {int} more money', function (int) {
-
+Then('I shoud have gotten {int} more money', async function (int) {
+  const money = await this.driver.findElements(By.className("//span[contains(text(),'15')]"));
+  for (var e of money) {
+    expect(await e.getText() - 10).to.be.equal(int);
+  }
 });
 
 Then('I shoud have a can of beer in my bag', async function () {
