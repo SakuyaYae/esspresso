@@ -17,7 +17,61 @@ Given('i have clicked on go east', async function () {
   await eastBtn[0].click();
 });
 
+Given('have a can of beer in my bag', async function () {
+  const northBtn = await this.driver.findElements(By.xpath("//li[contains(text(),'Go north')]"));
+  await northBtn[0].click();
+  const eastBtn = await this.driver.findElements(By.xpath("//li[contains(text(),'Go east')]"));
+  await eastBtn[0].click();
+
+  const waitBtn = await this.driver.findElements(By.xpath("//*[contains(text(),'Wait')]"));
+  await waitBtn[0].click();
+  const waitBtn2 = await this.driver.findElements(By.xpath("//*[contains(text(),'Wait')]"));
+  await waitBtn2[0].click();
+  const waitBtn3 = await this.driver.findElements(By.xpath("//*[contains(text(),'Wait')]"));
+  await waitBtn3[0].click();
+  const waitBtn4 = await this.driver.findElements(By.xpath("//*[contains(text(),'Wait')]"));
+  await waitBtn4[0].click();
+
+
+  const westBtn = await this.driver.findElements(By.xpath("//li[contains(text(),'Go west')]"));
+  await westBtn[0].click();
+  const southBtn = await this.driver.findElements(By.xpath("//li[contains(text(),'Go south')]"));
+  await southBtn[0].click();
+
+  const bagInv = await this.driver.findElements(By.className("bag-content"));
+  for (var e of bagInv) {
+    expect(await e.getText()).to.contain("a can of beer");
+  }
+
+});
+
 When('I press Wait', async function () {
   const waitBtn = await this.driver.findElements(By.xpath("//*[contains(text(),'Wait')]"));
   await waitBtn[0].click();
+});
+
+When('I press exit the cafe', async function () {
+  const exitCafe = await this.driver.findElements(By.xpath("//*[contains(text(),'Exit the cafe')]"));
+  await exitCafe[0].click();
+});
+
+When('I press Jam whit the band', async function () {
+  const jamBtn = await this.driver.findElements(By.xpath("//li[contains(text(),'Jam with the band')]"));
+  await jamBtn[0].click();
+});
+
+Then('I shoud have gotten {int} more money', function (int) {
+
+});
+
+Then('I shoud have a can of beer in my bag', async function () {
+  const bagInv = await this.driver.findElements(By.className("bag-content"));
+  for (var e of bagInv) {
+    expect(await e.getText()).to.contain("a can of beer");
+  }
+});
+
+Then('I shoud have the option to give the can of beer', async function () {
+  const giveBeer = await this.driver.findElements(By.xpath("//li[contains(text(),'Give beer to barista')]"));
+  await giveBeer[0].click();
 });
