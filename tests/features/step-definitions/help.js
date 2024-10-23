@@ -17,34 +17,16 @@ Then('I should get a description of the game', async function () {
 });
 
 Then('I click the {string} button to leave the help description', async function (string) {
-  const leave = await this.driver.findElements(By.xpath("//li[contains(text(),'Continue')]"))
-  await leave[0].click();
+  const leaveHelp = await this.driver.findElements(By.xpath("//li[contains(text(),'Continue')]"))
+  await leaveHelp[0].click();
 });
 
 
-/*Given('I am in front of the cafe', async function () {
-  By.xpath("//li[contains(text(),'Enter the cafe')]")
-});*/
 
 When('the user press the {string} button to enter the cafe', async function (string) {
   const enter = await this.driver.findElements(By.xpath("//li[contains(text(),'Enter the cafe')]"))
   await enter[0].click();
 });
-
-/*When('I press the {string} button', async function (string) {
-  const help = await this.driver.findElements(By.xpath("//li[contains(text(),'Help')]"))
-  await help[0].click();
-});
-
-Then('I should get a description of the game', async function () {
-  const description = await this.driver.findElements(By.xpath("//*[contains(text(),'description')]"))
-  expect(description).to.exist;
-});*/
-
-
-/*Given('I am in front of the cafe', async function () {
-  By.xpath("//li[contains(text(),'Enter the cafe')]")
-});*/
 
 When('I press {string} button to go south', async function (string) {
   const south = await this.driver.findElements(By.xpath("//li[contains(text(),'Go south')]"))
@@ -66,20 +48,7 @@ When('the user is at the Music scene', async function () {
   expect(description).to.exist;
 });
 
-/*When('I press the {string} button', async function (string) {
-  const help = await this.driver.findElements(By.xpath("//li[contains(text(),'Help')]"))
-  await help[0].click();
-});
 
-Then('I should get a description of the game', async function () {
-  const description = await this.driver.findElements(By.xpath("//*[contains(text(),'description')]"))
-  expect(description).to.exist;
-});*/
-
-
-/*Given('I am in front of the cafe', async function () {
-  By.xpath("//li[contains(text(),'Enter the cafe')]")
-});*/
 
 When('I press {string} button to go north', async function (string) {
   const north = await this.driver.findElements(By.xpath("//li[contains(text(),'Go north')]"))
@@ -101,12 +70,3 @@ When('the user is at the Bar', async function () {
   expect(description).to.exist;
 });
 
-/*When('I press the {string} button', async function (string) {
-  const help = await this.driver.findElements(By.xpath("//li[contains(text(),'Help')]"))
-  await help[0].click();
-});
-
-Then('I should get a description of the game', async function () {
-  const description = await this.driver.findElements(By.xpath("//*[contains(text(),'description')]"))
-  expect(description).to.exist;
-});*/
