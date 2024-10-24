@@ -2,7 +2,7 @@ Feature: My health should decreace when I do the wrong choices
 
   Background: I am infront of the cafe
     Given I visit the homepage
-    And I am in front of the cafe
+    And that i stand in front of the cafe
 
   Scenario: When I choose wait at the startpage
     When I press Wait

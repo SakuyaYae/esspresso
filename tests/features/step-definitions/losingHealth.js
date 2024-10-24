@@ -2,24 +2,24 @@ import { Given, When, Then } from '@cucumber/cucumber';
 import { By, until, Key } from 'selenium-webdriver';
 import { expect } from 'chai';
 
-const health = async function () {
-  const parent = driver.findElement(By.className("health"));
+const health = async function (driver) {
+  const parent = await driver.findElement(By.className("health"));
   const healthSpan = await parent.findElement(By.className("val"));
-  for (let number of healthSpan) {
-    expect(await number.gettext()).to.contain("50");
+  for (var number of healthSpan) {
+    expect(await number.getText()).to.contain("50");
   }
   return number
 }
 
 
-Then('My health should reduce', async function (string) {
-  const parent = driver.findElement(By.className("health"));
+Then('My health should reduce', async function () {
+  const parent = await this.driver.findElement(By.className("health"));
   const currentHealth = await parent.findElement(By.className("val"));
-  expect(currentHealth) < health();
+  expect(currentHealth) < health(this.driver);
 });
 
 
-When('I press Go north', async function (string) {
+When('I press Go north', async function () {
   const northBtn = await this.driver.findElements(By.xpath("//*[contains(text(),'Go north')]"));
   await northBtn[0].click();
 });
