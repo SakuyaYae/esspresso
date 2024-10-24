@@ -24,6 +24,8 @@ Feature: Wait Button is usefull somtimes
         And I press Wait
         And I press Wait
         And I press Wait
+        And I press Wait
+        And I press Wait
         Then I shoud have a can of beer in my bag
 
     Scenario: Wait in the music festival:
