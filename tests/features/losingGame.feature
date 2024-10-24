@@ -12,12 +12,4 @@ Feature: lose the game
     When I press Wait
     When I press Wait
     When I press Wait
-    When I press Wait
-    When I press Wait
-    When I press Wait
-    When I press Wait
-    When I press Wait
-    When I press Wait
-    When I press Wait
-    When I press Wait
     Then I want to se the gameover text
