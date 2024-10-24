@@ -2,9 +2,9 @@ import { Given, When, Then } from '@cucumber/cucumber';
 import { By, until, Key } from 'selenium-webdriver';
 import { expect } from 'chai';
 
-Given('I am in front of the cafe', async function () {
+/*Given('that i stand in front of the cafe', async function () {
   By.xpath("//li[contains(text(),'Enter the cafe')]")
-});
+});*/
 
 When('I press the {string} button', async function (string) {
   const help = await this.driver.findElements(By.xpath("//li[contains(text(),'Help')]"))
