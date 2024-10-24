@@ -17,7 +17,7 @@ When('I press Wait', async function (string) {
 
 Then('My health should reduce', async function (string) {
   const parent = driver.findElement(By.className("health")); 
-    const currentHealth = await parent.findElement(By.className("val"));
+  const currentHealth = await parent.findElement(By.className("val"));
   expect(currentHealth) < health();
 });
 
