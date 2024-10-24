@@ -13,14 +13,13 @@ When('I press the {string} button', async function (string) {
 
 Then('I should get a description of the game', async function () {
   const description = await this.driver.findElements(By.xpath("//*[contains(text(),'description')]"))
-  expect(description).to.exist;  
+  expect(description).to.exist;
 });
 
 Then('I click the {string} button to leave the help description', async function (string) {
   const leaveHelp = await this.driver.findElements(By.xpath("//li[contains(text(),'Continue')]"))
   await leaveHelp[0].click();
 });
-
 
 
 When('the user press the {string} button to enter the cafe', async function (string) {
@@ -47,7 +46,6 @@ When('the user is at the Music scene', async function () {
   const description = await this.driver.findElements(By.xpath("//*[contains(text(),'description')]"))
   expect(description).to.exist;
 });
-
 
 
 When('I press {string} button to go north', async function (string) {
