@@ -20,7 +20,8 @@ Feature: Win the game
     And I am in the cafe
     And I press Wait
     And I press Wait
-    And I press "Give beer to barista"
+    And I press Wait
+    And I shoud have the option to give the can of beer
     And I click the "Exit the cafe" button to leave the cafe
     And i have clicked on go south
     And i have clicked on go west
@@ -32,7 +33,7 @@ Feature: Win the game
     And i have clicked on go north
     And the user press the "Enter the cafe" button to enter the cafe
     And I am in the cafe
-    And I press "Buy an espresso"
+    And I press Buy an espresso
     Then I have 5 espressos and want to see the winning text
 
 
