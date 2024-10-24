@@ -4,7 +4,8 @@ import { expect } from 'chai';
 
 const health = async function (driver) {
   const parent = await driver.findElement(By.className("health"));
-  const healthSpan = await parent.findElement(By.className("val"));
+  const healthSpan = await parent.findElements(By.className("val"));
+
   for (var number of healthSpan) {
     expect(await number.getText()).to.contain("50");
   }
@@ -15,7 +16,7 @@ const health = async function (driver) {
 Then('My health should reduce', async function () {
   const parent = await this.driver.findElement(By.className("health"));
   const currentHealth = await parent.findElement(By.className("val"));
-  expect(currentHealth) < health(this.driver);
+  expect(parseInt(await currentHealth.getText())).to.be.lessThan(50);
 });
 
 
