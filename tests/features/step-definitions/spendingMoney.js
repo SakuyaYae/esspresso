@@ -12,7 +12,5 @@ Then('My money should be reduced by {float} coins', async function (a) {
   const parent = await this.driver.findElement(By.className("money"));
   const currentMoney = await parent.findElement(By.className("val"));
 
-  for (var number of currentMoney) {
-    expect(parseInt(number.getText())).to.be.lessThan(10);
-  }
+  expect(parseInt(await currentMoney.getText())).to.be.lessThan(10);
 });

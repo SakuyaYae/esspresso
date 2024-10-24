@@ -13,7 +13,7 @@ Feature: My health should decreace when I do the wrong choices
     And I press Wait
     Then My health should reduce
 
-Scenario: Gaining health by drinking coffee
-  When the user press the "Enter the cafe" button to enter the cafe
-  When I press Buy an espresso
-  Then my health should increase
+  Scenario: Gaining health by drinking coffee
+    When the user press the "Enter the cafe" button to enter the cafe
+    When I press Buy an espresso
+    Then my health should increase

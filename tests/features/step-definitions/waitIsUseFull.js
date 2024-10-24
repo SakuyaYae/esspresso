@@ -32,7 +32,10 @@ Given('have a can of beer in my bag', async function () {
   await waitBtn3[0].click();
   const waitBtn4 = await this.driver.findElements(By.xpath("//*[contains(text(),'Wait')]"));
   await waitBtn4[0].click();
-
+  const waitBtn5 = await this.driver.findElements(By.xpath("//*[contains(text(),'Wait')]"));
+  await waitBtn5[0].click();
+  const waitBtn6 = await this.driver.findElements(By.xpath("//*[contains(text(),'Wait')]"));
+  await waitBtn6[0].click();
 
   const westBtn = await this.driver.findElements(By.xpath("//li[contains(text(),'Go west')]"));
   await westBtn[0].click();
