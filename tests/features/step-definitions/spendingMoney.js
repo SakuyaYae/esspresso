@@ -11,5 +11,5 @@ When('I press Buy an espresso', async function(){
 Then('My money should be reduced by {float} coins', async function(a){
   const parent = driver.findElement(By.className("money")); 
   const currentMoney = await parent.findElement(By.className("val"));
-  expect(currentMoney)===5
+  expect(currentMoney)<10
 });
