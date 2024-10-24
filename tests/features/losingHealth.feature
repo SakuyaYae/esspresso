@@ -8,7 +8,7 @@ Feature: My health should decreace when I do the wrong choices
     When I press Wait
     Then My health should reduce
 
-  Scenario: When I choose wait as you go north
+  Scenario: When I choose wait as I go north
     When I press Go north
     And I press Wait
     Then My health should reduce

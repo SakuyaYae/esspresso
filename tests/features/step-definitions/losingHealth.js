@@ -18,7 +18,6 @@ Then('My health should reduce', async function () {
   expect(currentHealth) < health(this.driver);
 });
 
-
 When('I press Go north', async function () {
   const northBtn = await this.driver.findElements(By.xpath("//*[contains(text(),'Go north')]"));
   await northBtn[0].click();
