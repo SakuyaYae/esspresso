@@ -37,7 +37,6 @@ When('i click on go north', async function () {
   await northBtn[0].click();
 });
 
-
 Then('my bag shoud be visible above the image', async function () {
   const bagElem = await this.driver.findElements(By.xpath("//*[contains(text(),'bag')]"));
   expect(bagElem).to.exist
