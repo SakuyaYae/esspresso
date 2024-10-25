@@ -2,7 +2,6 @@
   "name": "selenium-with-cucumber",
   "type": "module",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js tests/features --import tests/features/support --import tests/features/step-definitions --world-parameters {\\\"browserName\\\":\\\"chrome\\\"}  --format progress-bar --format json:tests/results/chrome.json",
@@ -17,7 +16,12 @@
     "chai": "^5.1.1",
     "chromedriver": "^130.0.1",
     "cucumber-html-reporter": "^6.0.0",
+    "express": "^4.21.1",
     "open": "^10.1.0",
     "selenium-webdriver": "^4.25.0"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "description": ""
 }
