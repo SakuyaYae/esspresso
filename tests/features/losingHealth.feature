@@ -1,6 +1,6 @@
 Feature: My health should decreace when I do the wrong choices
 
-  Background: I am infront of the cafe
+  Background: that i stand in front of the cafe
     Given I visit the homepage
     And that i stand in front of the cafe
 
