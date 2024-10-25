@@ -2,16 +2,6 @@ import { Given, When, Then } from '@cucumber/cucumber';
 import { By, until, Key } from 'selenium-webdriver';
 import { expect } from 'chai';
 
-const health = async function (driver) {
-  const parent = await driver.findElement(By.className("health"));
-  const healthSpan = await parent.findElements(By.className("val"));
-
-  for (var number of healthSpan) {
-    expect(await number.getText()).to.contain("50");
-  }
-  return number
-}
-
 
 Then('My health should reduce', async function () {
   const parent = await this.driver.findElement(By.className("health"));
