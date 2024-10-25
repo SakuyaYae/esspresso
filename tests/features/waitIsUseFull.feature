@@ -10,6 +10,7 @@ Feature: Wait Button is usefull somtimes
         And I press Wait
         And I press Wait
         And I press Wait
+        And I press Wait
         And I press exit the cafe
         And press the enter The cafe Button
         Then I shoud have the option to give the can of beer
