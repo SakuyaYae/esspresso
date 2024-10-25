@@ -2,7 +2,6 @@ import { Given, When, Then } from '@cucumber/cucumber';
 import { By, until, Key } from 'selenium-webdriver';
 import { expect } from 'chai';
 
-
 Then('My health should reduce', async function () {
   const parent = await this.driver.findElement(By.className("health"));
   const currentHealth = await parent.findElement(By.className("val"));
