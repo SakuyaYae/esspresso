@@ -3,7 +3,7 @@ import { By, until, Key } from 'selenium-webdriver';
 import { expect } from "chai";
 
 Given('I visit the homepage', async function () {
-  await this.driver.get("http://localhost:5500/frontend/");
+  await this.driver.get("http://localhost:3000");
 });
 
 Given('that i stand in front of the cafe', async function () {
