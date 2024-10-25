@@ -2,10 +2,6 @@ import { Given, When, Then } from '@cucumber/cucumber';
 import { By, until, Key } from 'selenium-webdriver';
 import { expect } from 'chai';
 
-/*Given('that i stand in front of the cafe', async function () {
-  By.xpath("//li[contains(text(),'Enter the cafe')]")
-});*/
-
 When('I press the {string} button', async function (string) {
   const help = await this.driver.findElements(By.xpath("//li[contains(text(),'Help')]"))
   await help[0].click();
@@ -20,7 +16,6 @@ Then('I click the {string} button to leave the help description', async function
   const leaveHelp = await this.driver.findElements(By.xpath("//li[contains(text(),'Continue')]"))
   await leaveHelp[0].click();
 });
-
 
 When('the user press the {string} button to enter the cafe', async function (string) {
   const enter = await this.driver.findElements(By.xpath("//li[contains(text(),'Enter the cafe')]"))
@@ -46,7 +41,6 @@ When('the user is at the Music scene', async function () {
   const description = await this.driver.findElements(By.xpath("//*[contains(text(),'description')]"))
   expect(description).to.exist;
 });
-
 
 When('I press {string} button to go north', async function (string) {
   const north = await this.driver.findElements(By.xpath("//li[contains(text(),'Go north')]"))
