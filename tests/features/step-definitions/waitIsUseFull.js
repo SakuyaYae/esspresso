@@ -61,7 +61,7 @@ When('I press exit the cafe', async function () {
 
 When('I press Jam whit the band', async function () {
   const jamBtn = await this.driver.findElements(By.xpath("//li[contains(text(),'Jam with the band')]"));
-  await jamBtn[0].click();
+  await jamBtn[0].click(); 
 });
 
 Then('I shoud have gotten {int} more money', async function (int) {
