@@ -27,6 +27,7 @@ When('i click on go west', async function () {
   await westBtn[0].click();
 });
 
+
 When('i click on go east', async function () {
   const eastBtn = await this.driver.findElements(By.xpath("//li[contains(text(),'Go east')]"));
   await eastBtn[0].click();
