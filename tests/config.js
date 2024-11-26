@@ -8,4 +8,4 @@ export const headless = true;
 export const timeout = 30000;
 // to run in 'slow motion' increase this time
 // and to run at maximal speed keep at 0
-export const sleepBetweenSteps = 50; //ändra till 0 och sätt headless till true om ej gui test
+export const sleepBetweenSteps = 200; //ändra till 0 och sätt headless till true om ej gui test
