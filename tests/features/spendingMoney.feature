@@ -1,7 +1,7 @@
 Feature: As a player I want to see my money reduce if I buy coffee.
 
 
-  Scenario: Press the help button on startpage and leave the help description
+  Scenario: Buying espresso should reduce money bar
     Given I visit the homepage
     And that i stand in front of the cafe
     When the user press the "Enter the cafe" button to enter the cafe
