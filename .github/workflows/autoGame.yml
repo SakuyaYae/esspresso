@@ -23,7 +23,7 @@ jobs:
       # only testing on Node 20 now but could have done
       # several builds by adding [16.x, 18.x] etc
       matrix:
-        node-version: [18.x]
+        node-version: [18.x, 20.x]
 
     steps:
       # action from github marketplace, actions
@@ -49,7 +49,7 @@ jobs:
     - run: nohup node index.js &
       # run whatever is specified in package.json
       # for the script test
-    - run: npm test
+    - run: npm run test-edge
       # make sure to run with colored output
       env:
         FORCE_COLOR: 2
