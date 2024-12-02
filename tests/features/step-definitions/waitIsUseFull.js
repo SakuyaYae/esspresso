@@ -71,15 +71,12 @@ When('I press exit the cafe', async function () {
 });
 
 When('I press Jam whit the band', async function () {
-  const jamBtn = await this.driver.findElements(By.xpath("//li[contains(text(),'Jam with the band')]"));
-  if(jamBtn === undefined){
-    console.log("hej")
-    for(let i=0; i<7; i++){
-      const waitBtn = await this.driver.findElements(By.xpath("//*[contains(text(),'Wait')]"));
-      await waitBtn[0].click();
-      if(jamBtn !== undefined){
-        break;
-      }
+  for(let i=0; i<7; i++){
+    const waitBtn = await this.driver.findElements(By.xpath("//*[contains(text(),'Wait')]"));
+    await waitBtn[0].click();
+    const jamBtn = await this.driver.findElements(By.xpath("//li[contains(text(),'Jam with the band')]"));
+    if(jamBtn !== undefined){
+      break;
     }
   }
  await jamBtn[0].click(); 
