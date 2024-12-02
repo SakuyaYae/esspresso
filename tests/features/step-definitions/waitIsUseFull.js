@@ -74,7 +74,7 @@ When('I press Jam whit the band', async function () {
   for(let i=0; i<7; i++){
     const waitBtn = await this.driver.findElements(By.xpath("//*[contains(text(),'Wait')]"));
     await waitBtn[0].click();
-    const jamBtn = await this.driver.findElements(By.xpath("//li[contains(text(),'Jam with the band')]"));
+    var jamBtn = await this.driver.findElements(By.xpath("//li[contains(text(),'Jam with the band')]"));
     if(jamBtn !== undefined){
       break;
     }
