@@ -26,9 +26,9 @@ Feature: Win the game
     And I click the "Exit the cafe" button to leave the cafe
     And i have clicked on go south
     And i have clicked on go west
-    And I press Wait
-    And I press Wait
-    And I press Wait
+    #And I press Wait
+    #And I press Wait
+    #And I press Wait
     And I press Jam whit the band
     And i have clicked on go east
     And i have clicked on go north
