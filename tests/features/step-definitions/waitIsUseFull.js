@@ -39,16 +39,23 @@ Given('have a can of beer in my bag', async function () {
   await waitBtn6[0].click();
   const waitBtn7 = await this.driver.findElements(By.xpath("//*[contains(text(),'Wait')]"));
   await waitBtn7[0].click();
-  
+
   const westBtn = await this.driver.findElements(By.xpath("//li[contains(text(),'Go west')]"));
   await westBtn[0].click();
   const southBtn = await this.driver.findElements(By.xpath("//li[contains(text(),'Go south')]"));
   await southBtn[0].click();
 
-  const bagInv = await this.driver.findElements(By.className("bag-content"));
+  for(let i=0; i<7; i++){
+    const waitBtn2 = await this.driver.findElements(By.xpath("//*[contains(text(),'Wait')]"));
+    await waitBtn2[0].click();
+    var bagInv = await this.driver.findElements(By.className("bag-content"));
+    if(bagInv.includes("a can of beer")){
+      break;
+    }
+  }
   for (var e of bagInv) {
     expect(await e.getText()).to.contain("a can of beer");
-  }
+  } 
 
 });
 
@@ -64,7 +71,20 @@ When('I press exit the cafe', async function () {
 
 When('I press Jam whit the band', async function () {
   const jamBtn = await this.driver.findElements(By.xpath("//li[contains(text(),'Jam with the band')]"));
-  await jamBtn[0].click(); 
+  if(jamBtn!== undefined){
+     await jamBtn[0].click();  
+  }
+  if(jamBtn === undefined){
+    for(let i=0; i<7; i++){
+      const waitBtn = await this.driver.findElements(By.xpath("//*[contains(text(),'Wait')]"));
+      await waitBtn[0].click();
+      const jamBtnExist = await this.driver.findElements(By.xpath("//li[contains(text(),'Jam with the band')]"));
+      if(jamBtnExist !== undefined){
+        await jamBtn[0].click(); 
+      }
+    }
+  }
+
 });
 
 Then('I shoud have gotten {int} more money', async function (int) {
