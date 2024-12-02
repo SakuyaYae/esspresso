@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js tests/features --import tests/features/support --import tests/features/step-definitions --world-parameters {\\\"browserName\\\":\\\"chrome\\\"}  --format json:tests/results/chrome.json",
+    "test": "cucumber-js tests/features --import tests/features/support --import tests/features/step-definitions --world-parameters {\\\"browserName\\\":\\\"chrome\\\"}  --format json:tests/results/chrome.json --format @qavajs/console-formatter --fail-fast",
     "test-edge": "cucumber-js tests/features --import tests/features/support-edge --import tests/features/step-definitions --world-parameters {\\\"browserName\\\":\\\"edge\\\"}  --format json:tests/results/chrome.json --format @qavajs/console-formatter --fail-fast",
     "report": "node ./generateReport",
     "make-steps": "node makeSteps.cjs"
