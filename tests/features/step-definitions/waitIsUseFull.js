@@ -23,7 +23,7 @@ Given('have a can of beer in my bag', async function () {
   await northBtn[0].click();
   const eastBtn = await this.driver.findElements(By.xpath("//li[contains(text(),'Go east')]"));
   await eastBtn[0].click();
-  
+
   for(let i=0; i<7; i++){
     const waitBtn2 = await this.driver.findElements(By.xpath("//*[contains(text(),'Wait')]"));
     await waitBtn2[0].click();
@@ -76,12 +76,14 @@ When('I press Jam whit the band', async function () {
      await jamBtn[0].click();  
   }
   if(jamBtn === undefined){
+    console.log("hej")
     for(let i=0; i<7; i++){
       const waitBtn = await this.driver.findElements(By.xpath("//*[contains(text(),'Wait')]"));
       await waitBtn[0].click();
       const jamBtnExist = await this.driver.findElements(By.xpath("//li[contains(text(),'Jam with the band')]"));
       if(jamBtnExist !== undefined){
-        await jamBtn[0].click(); 
+        await jamBtnExist[0].click(); 
+        break;
       }
     }
   }
